@@ -23,7 +23,7 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONARQUBE_TOKEN }}
           SONAR_HOST_URL: "https://bf4f-46-150-68-67.ngrok-free.app"
-          SONAR_PROJECT_KEY: "your_project_key"
+          SONAR_PROJECT_KEY: "mytest"
       # If you wish to fail your job when the Quality Gate is red, uncomment the
       # following lines. This would typically be used to fail a deployment.
       # - uses: SonarSource/sonarqube-quality-gate-action@v1
