@@ -38,5 +38,4 @@ jobs:
           SONAR_HOST_URL: "https://5fa2-46-150-68-67.ngrok-free.app"
           SONAR_PROJECT_KEY: "mytest"
           SONAR_PROJECT_NAME: "MyTestProject" 
-          SONAR_SCANNER_OPTS: "-X"
         
