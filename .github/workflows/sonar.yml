@@ -13,24 +13,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0 
+          fetch-depth: 0  # Disable shallow clone for better relevancy of analysis
 
       - name: Print working directory
         run: |
           echo "Current directory: $(pwd)"  # Print the current directory to check where SonarQube is running
           ls -al  # List files to inspect the structure
 
-      - name: Checkout external repository 1 (example)
+      - name: Checkout external repository 
         uses: actions/checkout@v4
         with:
           repository: fportantier/vulpy
           path: external-vulpy
 
-      - name: Checkout external repository 2 (example)
-        uses: actions/checkout@v4
-        with:
-          repository: ScaleSec/vulnado
-          path: external-xyz
+      - name: Print working directory for external repository
+        run: |
+          echo "Current directory for external repo: $(pwd)"
+          ls -al  # List files in the external repository
 
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v4
