@@ -14,10 +14,10 @@ sonarqube:
 
 lint:
   stage: lint
-  image: node:16
+  image: python:3.11
   script:
-    - npm install -g eslint
-    - eslint app.py
+    - pip install pylint
+    - pylint app.py
 
 build:
   stage: build
