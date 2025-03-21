@@ -1,0 +1,32 @@
+stages:
+  - lint
+  - build
+  - test
+  - deploy
+
+lint:
+  stage: lint
+  image: node:16
+  script:
+    - npm install -g eslint
+    - eslint app.py
+
+build:
+  stage: build
+  image: docker:20.10.7
+  services:
+    - docker:19.03.12-dind
+  script:
+    - docker build -t flask-app .
+
+test:
+  stage: test
+  image: python:3.11
+  script:
+    - pip install -r requirements.txt
+    - pytest tests/
+
+deploy:
+  stage: deploy
+  script:
+    - docker-compose up -d
