@@ -8,7 +8,7 @@ sonarqube:
   stage: lint
   image: sonarsource/sonar-scanner-cli:latest
   script:
-    - sonar-scanner -Dsonar.projectKey=flask-app -Dsonar.sources=. -Dsonar.host.url=http://192.168.31.170:9000 -Dsonar.login=$SONARQUBE_TOKEN
+    - sonar-scanner -Dsonar.projectKey=flask-app -Dsonar.sources=. -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} -Dsonar.login=${{ secrets.SONARQUBE_TOKEN }}
   only:
     - main
 
