@@ -34,3 +34,8 @@
 
 Этот проект настроен с использованием GitLab CI для автоматического тестирования, сборки и деплоя.
 
+3. Команды для запуска алертов:
+```
+./alertmanager --config.file=alertmanager.yml
+./prometheus --config.file=prometheus.yml
+```
